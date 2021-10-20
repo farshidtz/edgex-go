@@ -150,6 +150,8 @@ apps:
       # by manipulating the Kong DNS checking order via environment variable. Once we did that,
       # the prolonged connecting issue went away.
       KONG_DNS_ORDER: "LAST,A,CNAME"
+      # Throttle the number of worker processes to reduce memory consumption
+      KONG_NGINX_WORKER_PROCESSES: 1
       LC_ALL: C.UTF-8
       LANG: C.UTF-8
     start-timeout: 15m
